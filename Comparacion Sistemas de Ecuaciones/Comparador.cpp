@@ -11,31 +11,50 @@ using namespace std;
 void printMatrix(vector<vector<double>>);
 vector<vector<double>> readFile();
 vector<vector<double>> getMatrix(int n, vector<double>);
-long getTime();
+double getTime();
 
 // Prototipos relacionados con Los métodos de Solución
-long GaussJordan(vector<vector<double>>);
+// GAUSS-JORDAN
+double GaussJordan(vector<vector<double>>);
 vector<double> modifiedRow(vector<double>, vector<double>, double);
 vector<double> getResults(vector<vector<double>>);
 void swapRows(vector<vector<double>> &, int, int);
 
-int n;
+// GAUSS
 
+// CRAMMER
+
+// n global por mera comodidad
+int n;
 int main()
 {
-    long GaussJordanTime = 0;
+    int sistemas = 1;
+    double GaussJordanTime = 0;
+    double GaussTime = 0;
+    double CrammerTime = 0;
 
     vector<vector<double>> lines = readFile();
+    cout << "El tiempo se muestra en segundos" << endl;
     for (int j = 1; j < lines.size(); j += 2)
     {
+        cout << "Sistema: " << sistemas++ << endl;
         n = (int)lines[j - 1][0];
         vector<vector<double>> Matrix(n, vector<double>(n + 1));
         Matrix = getMatrix(n, lines[j]);
-        cout << "Matriz Aumentada: " << endl;
-        printMatrix(Matrix);
+
         GaussJordanTime = GaussJordan(Matrix);
+        // llamar gauss
+
+        // llamar cramer
+
+        cout << "Tamano: " << n << "\n"
+             << endl;
+        cout << "Tiempo para Gauss-Jordan ---> " << GaussJordanTime << endl;
+        cout << "Tiempo para Gauss ---> " << GaussTime << endl;
+        cout << "Tiempo para Crammer ---> " << CrammerTime << endl;
+        cout << " \n ------------------------------------ \n\n"
+             << endl;
     }
-    cout << GaussJordanTime;
     return 0;
 }
 
@@ -104,18 +123,21 @@ void printMatrix(vector<vector<double>> Mtx)
     cout << endl;
 }
 
-long getTime()
+double getTime()
 {
+    // return duration_cast<milliseconds>(system_clock::now().time_since_epoch()).count();
     return clock();
 }
 
 // Solving Method's Functions
-long GaussJordan(vector<vector<double>> Mtx)
+// GAUSS-JORDAN
+
+double GaussJordan(vector<vector<double>> Mtx)
 {
     // esto es... (n^3)? :(
     // Creo, tomando en cuenta que es n^2 en el principal
     // Y luego en modified row toma n, entonces n^2 * n = n^3, no?
-    long start = getTime();
+    double start = getTime();
     for (int i = 0; i < n; i++)
     {
         // intercambio
@@ -135,8 +157,8 @@ long GaussJordan(vector<vector<double>> Mtx)
             }
             if (!flag)
             {
-                cout << "Sin solución" << endl;
-                return getTime() - start;
+                cout << "Sin solucion" << endl;
+                return (double)(getTime() - start) / CLOCKS_PER_SEC;
             }
         }
         for (int j = i + 1; j < n; j++)
@@ -153,6 +175,8 @@ long GaussJordan(vector<vector<double>> Mtx)
             Mtx[j] = modifiedRow(Mtx[i], Mtx[j], cociente);
         }
     }
+
+    ///RESULTADO
     cout << "Resultado final" << endl;
 
     // Luego get results vuelve a hacer otro ciclo, entonces es n^3 * n = n^4
@@ -163,7 +187,7 @@ long GaussJordan(vector<vector<double>> Mtx)
         cout << "  " << results[i] << " ";
     }
     cout << endl;
-    return getTime() - start;
+    return (double)(getTime() - start) / CLOCKS_PER_SEC;
 }
 
 vector<double> modifiedRow(vector<double> pivote,
@@ -193,3 +217,7 @@ vector<double> getResults(vector<vector<double>> Mtx)
     }
     return results;
 }
+
+///////////// GAUSS
+
+///////////// CRAMMER
