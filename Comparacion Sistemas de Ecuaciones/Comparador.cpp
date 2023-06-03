@@ -21,7 +21,7 @@ vector<double> getResults(vector<vector<double>>);
 void swapRows(vector<vector<double>> &, int, int);
 
 // GAUSS
-
+double Gauss(vector<vector<double>>);
 // CRAMMER
 
 // n global por mera comodidad
@@ -44,6 +44,7 @@ int main()
 
         GaussJordanTime = GaussJordan(Matrix);
         // llamar gauss
+        GaussTime = Gauss(Matrix);
 
         // llamar cramer
 
@@ -132,8 +133,9 @@ double getTime()
 // Solving Method's Functions
 // GAUSS-JORDAN
 
-double GaussJordan(vector<vector<double>> Mtx)
+double GaussJordan(vector<vector<double>> Matrix)
 {
+    vector<vector<double>> Mtx = Matrix;
     // esto es... (n^3)? :(
     // Creo, tomando en cuenta que es n^2 en el principal
     // Y luego en modified row toma n, entonces n^2 * n = n^3, no?
@@ -176,8 +178,8 @@ double GaussJordan(vector<vector<double>> Mtx)
         }
     }
 
-    ///RESULTADO
-    cout << "Resultado final" << endl;
+    /// RESULTADO
+    cout << "(G - J) Resultado final: ";
 
     // Luego get results vuelve a hacer otro ciclo, entonces es n^3 * n = n^4
     // Chale
@@ -219,5 +221,60 @@ vector<double> getResults(vector<vector<double>> Mtx)
 }
 
 ///////////// GAUSS
+double Gauss(vector<vector<double>> Matrix)
+{
+    vector<vector<double>> A = Matrix;
+    double start = getTime();
+    for (int i = 0; i < n; i++)
+    {
+        if (A[i][i] == 0)
+        {
+            bool flag = false;
+            // Buscar una fila no nula para intercambiar
+            for (int l = i + 1; l < n; l++)
+            {
+                if (A[l][i] != 0)
+                {
+                    cout << "Swap" << endl;
+                    swapRows(A, i, l);
+                    flag = true;
+                    break;
+                }
+            }
+            if (!flag)
+            {
+                cout << "Sin solucion" << endl;
+                return (double)(getTime() - start) / CLOCKS_PER_SEC;
+            }
+        }
+        for (int j = i + 1; j < n; j++)
+        {
+            double factor = A[j][i] / A[i][i];
+            for (int k = i; k < n + 1; k++)
+            {
+                A[j][k] -= factor * A[i][k];
+            }
+        }
+    }
 
+    vector<double> solucion(n);
+    for (int i = n - 1; i >= 0; i--)
+    {
+        double suma = 0;
+        for (int j = i + 1; j < n; j++)
+        {
+            suma += A[i][j] * solucion[j];
+        }
+        solucion[i] = (A[i][n] - suma) / A[i][i];
+    }
+
+    cout << "(GAUSS) La solucion del sistema es: ";
+    for (int i = 0; i < n; i++)
+    {
+        cout << solucion[i] << " ";
+    }
+    cout << endl;
+
+    return (double)(getTime() - start) / CLOCKS_PER_SEC;
+}
 ///////////// CRAMMER
