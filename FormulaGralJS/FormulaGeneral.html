@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PROGRAMACION CIENTIFICA | INICIO</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Unbounded&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <nav class="nav_bar">
+        <img
+          src="/img/idea-luz-bulbo-foco-icono-plano-del-color-éxito-plantilla-de-la-bandera-vector-148889426.jpg"
+        />
+        <ul class="nav_cont">
+          <li class="nav_list">
+            <a class="nav_element" data-ID="formula_general">FORMULA GENERAL</a>
+          </li>
+          <li class="nav_list">
+            <a class="nav_element" data-ID="numeros_aleatorios"
+              >MÉTODO ALEATORIO</a
+            >
+          </li>
+          <li class="nav_list">
+            <a class="nav_element" data-ID="fuerza_bruta">FUERZA BRUTA</a>
+          </li>
+        </ul>
+        <button>N</button>
+      </nav>
+    </header>
+    <section>
+      <!-- container -->
+      <div class="container">
+        <div class="method__container" id="#formula-general">
+          <div class="method__description">
+            <h1 class="method__name">FORMULA GENERAL</h1>
+            <p>
+              ParaPara calcular la solucion de las ecuaciones cuadráticas se
+              utiliza el método de la fórmula general: <br />
+            </p>
+          </div>
+          <div class="method__description hidden">
+            <h1 class="method__name">FUERZA BRUTA</h1>
+            <p>
+              Fureza bruta brutisima <br />
+            </p>
+          </div>
+          <div class="method__description hidden">
+            <h1 class="method__name">NÚMEROS ALEATORIOS</h1>
+            <p>
+              Numeros aleatorios<br />
+            </p>
+          </div>
+          <form>
+            <h1>
+              <input
+                type="text"
+                class="input__field"
+                placeholder="a"
+                title="Coeficiente del valor cuadratico"
+              />
+              x<sup>2</sup> +
+              <input
+                type="text"
+                class="input__field"
+                placeholder="b"
+                title="Coeficiente del valor de grado 1"
+              />
+              x +
+              <input
+                type="text"
+                class="input__field"
+                placeholder="c"
+                title="Valor constante"
+              />
+            </h1>
+          </form>
+          <button class="close__button" ik="ok">Aceptar</button>
+        </div>
+      </div>
+      <div class="div__answers">
+        <h2 class="input_label" id="answers">aaaaaaaaaa</h2>
+      </div>
+    </section>
+
+    <div class="modal hidden">
+      <h1>Error</h1>
+      <p>Descripcion del error</p>
+      <button class="close__button">Cerrar</button>
+    </div>
+    <div class="overlay hidden"></div>
+    <footer>Aqui va el footer</footer>
+    <script src="script.js"></script>
+
+    <footer>Aqui va el footer</footer>
+    <script src="script.js"></script>
+  </body>
+</html>
