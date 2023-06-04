@@ -12,8 +12,10 @@ void printMatrix(vector<vector<double>>);
 vector<vector<double>> readFile();
 vector<vector<double>> getMatrix(int n, vector<double>);
 double getTime();
+bool checkNumber(string);
+void writeResults(double, double, double, double);
 
-// Prototipos relacionados con Los métodos de Solución
+// Prototipos relacionados con Los m�todos de Soluci�n
 // GAUSS-JORDAN
 double GaussJordan(vector<vector<double>>);
 vector<double> modifiedRow(vector<double>, vector<double>, double);
@@ -22,7 +24,9 @@ void swapRows(vector<vector<double>> &, int, int);
 
 // GAUSS
 double Gauss(vector<vector<double>>);
+
 // CRAMMER
+double Cramer(vector<vector<double>>);
 
 // n global por mera comodidad
 int n;
@@ -41,13 +45,14 @@ int main()
         n = (int)lines[j - 1][0];
         vector<vector<double>> Matrix(n, vector<double>(n + 1));
         Matrix = getMatrix(n, lines[j]);
-
         GaussJordanTime = GaussJordan(Matrix);
         // llamar gauss
         GaussTime = Gauss(Matrix);
 
         // llamar cramer
+        CrammerTime = Cramer(Matrix);
 
+        cout << "\n";
         cout << "Tamano: " << n << "\n"
              << endl;
         cout << "Tiempo para Gauss-Jordan ---> " << GaussJordanTime << endl;
@@ -55,6 +60,7 @@ int main()
         cout << "Tiempo para Crammer ---> " << CrammerTime << endl;
         cout << " \n ------------------------------------ \n\n"
              << endl;
+        writeResults(n, GaussJordanTime, GaussTime, CrammerTime);
     }
     return 0;
 }
@@ -76,12 +82,25 @@ vector<vector<double>> getMatrix(int n, vector<double> line)
     return Matrix;
 }
 
+bool checkNumber(string cr)
+{
+    try
+    {
+        double flt = std::stod(cr);
+        return true;
+    }
+    catch (exception)
+    {
+        return false;
+    }
+}
+
 vector<vector<double>> readFile()
 {
     vector<vector<double>> lines;
     ifstream dataset;
     string line;
-    dataset.open("dataset.txt", ios::in);
+    dataset.open("tst.txt", ios::in);
 
     while (!dataset.eof())
     {
@@ -96,12 +115,19 @@ vector<vector<double>> readFile()
                 temp += line[i];
                 if (temp.compare("-"))
                 {
-                    temp += line[i + 1];
-                    i++;
+                    string tst = "";
+                    tst += line[i + 1];
+                    while (checkNumber(tst))
+                    {
+                        temp += line[i + 1];
+                        i++;
+                        tst = "";
+                        tst += line[i];
+                    }
                 }
                 row.push_back(std::stod(temp));
-                temp = " ";
             }
+            temp = " ";
         }
         lines.push_back(row);
     }
@@ -122,6 +148,22 @@ void printMatrix(vector<vector<double>> Mtx)
         cout << endl;
     }
     cout << endl;
+}
+
+void writeResults(double n, double GJ, double G, double C)
+{
+    ofstream archivo;
+
+    archivo.open("resultados.txt", ios::app);
+
+    if (archivo.fail())
+    {
+        cout << "Dammit" << endl;
+        exit(1);
+    }
+    archivo << "\t" << n << "\t" << GJ << "\t" << G << "\t" << C << endl;
+
+    archivo.close();
 }
 
 double getTime()
@@ -278,3 +320,66 @@ double Gauss(vector<vector<double>> Matrix)
     return (double)(getTime() - start) / CLOCKS_PER_SEC;
 }
 ///////////// CRAMMER
+vector<vector<double>> matGen(vector<vector<double>> &s, int x)
+{
+    vector<vector<double>> matrix(s.size() - 1, vector<double>(s.size() - 1));
+    for (int i = 1; i < s.size(); i++)
+    {
+        for (int j = 0; j < s.size(); j++)
+        {
+            if (j != x)
+            {
+                matrix[i - 1][j > x ? j - 1 : j] = s[i][j];
+            }
+        }
+    }
+    return matrix;
+}
+
+double det(vector<vector<double>> &s)
+{
+    vector<vector<double>> matrix(s.size() - 1, vector<double>(s.size() - 1));
+    if (s.size() == 2)
+    {
+        return ((s[0][0] * s[1][1]) - (s[0][1] * s[1][0]));
+    }
+    double d = 0;
+    for (int i = 0; i < s.size(); i++)
+    {
+        matrix = matGen(s, i);
+        d += s[0][i] * det(matrix) * (i % 2 ? -1 : 1);
+    }
+    return d;
+}
+
+double Cramer(vector<vector<double>> Matrix)
+{
+    double start = getTime();
+    int inc = Matrix.size();
+    vector<vector<double>> sistem(inc, vector<double>(inc));
+    vector<double> results(inc);
+    for (int i = 0; i < inc; i++)
+    {
+        for (int j = 0; j < inc; j++)
+        {
+            if (j <= inc)
+            {
+                sistem[i][j] = Matrix[i][j];
+            }
+        }
+        results[i] = Matrix[i][inc];
+    }
+    vector<vector<double>> s2 = sistem;
+    float detA = det(sistem);
+    cout << "(CRAMER) La solucion del sistema es: ";
+    for (int i = 0; i < sistem.size(); i++)
+    {
+        for (int j = 0; j < sistem.size(); j++)
+        {
+            s2[j][i] = results[j];
+        }
+        cout << (det(s2) / detA) << " ";
+        s2 = sistem;
+    }
+    return (double)(getTime() - start) / CLOCKS_PER_SEC;
+}

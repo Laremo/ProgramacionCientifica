@@ -49,7 +49,7 @@ namespace GeneradorSE
                 }
             }
 
-            String path = Directory.GetCurrentDirectory() + "\\EcuacionesEnTxt\\sistemas.txt";
+            String path = "C:\\Users\\memoo\\Documents\\Git\\ProgramacionCientifica\\sistemas.txt";
             File.WriteAllText(path, text);
         }
         static void Main(string[] args)

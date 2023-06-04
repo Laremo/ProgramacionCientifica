@@ -13,3 +13,18 @@ C:\Users\sebas\OneDrive - Universidad Autónoma de Aguascalientes\DOCUMENTOS UNI
 C:\Users\sebas\OneDrive - Universidad Autónoma de Aguascalientes\DOCUMENTOS UNIVERSIDAD\4to semestre\Programación cientifica\3er parcial\GeneradorSE\obj\Debug\net7.0\GeneradorSE.pdb
 C:\Users\sebas\OneDrive - Universidad Autónoma de Aguascalientes\DOCUMENTOS UNIVERSIDAD\4to semestre\Programación cientifica\3er parcial\GeneradorSE\obj\Debug\net7.0\GeneradorSE.genruntimeconfig.cache
 C:\Users\sebas\OneDrive - Universidad Autónoma de Aguascalientes\DOCUMENTOS UNIVERSIDAD\4to semestre\Programación cientifica\3er parcial\GeneradorSE\obj\Debug\net7.0\ref\GeneradorSE.dll
+C:\Users\memoo\Documents\Git\ProgramacionCientifica\Comparacion Sistemas de Ecuaciones\GeneradorSE\bin\Debug\net7.0\GeneradorSE.exe
+C:\Users\memoo\Documents\Git\ProgramacionCientifica\Comparacion Sistemas de Ecuaciones\GeneradorSE\bin\Debug\net7.0\GeneradorSE.deps.json
+C:\Users\memoo\Documents\Git\ProgramacionCientifica\Comparacion Sistemas de Ecuaciones\GeneradorSE\bin\Debug\net7.0\GeneradorSE.runtimeconfig.json
+C:\Users\memoo\Documents\Git\ProgramacionCientifica\Comparacion Sistemas de Ecuaciones\GeneradorSE\bin\Debug\net7.0\GeneradorSE.dll
+C:\Users\memoo\Documents\Git\ProgramacionCientifica\Comparacion Sistemas de Ecuaciones\GeneradorSE\bin\Debug\net7.0\GeneradorSE.pdb
+C:\Users\memoo\Documents\Git\ProgramacionCientifica\Comparacion Sistemas de Ecuaciones\GeneradorSE\obj\Debug\net7.0\GeneradorSE.csproj.AssemblyReference.cache
+C:\Users\memoo\Documents\Git\ProgramacionCientifica\Comparacion Sistemas de Ecuaciones\GeneradorSE\obj\Debug\net7.0\GeneradorSE.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\memoo\Documents\Git\ProgramacionCientifica\Comparacion Sistemas de Ecuaciones\GeneradorSE\obj\Debug\net7.0\GeneradorSE.AssemblyInfoInputs.cache
+C:\Users\memoo\Documents\Git\ProgramacionCientifica\Comparacion Sistemas de Ecuaciones\GeneradorSE\obj\Debug\net7.0\GeneradorSE.AssemblyInfo.cs
+C:\Users\memoo\Documents\Git\ProgramacionCientifica\Comparacion Sistemas de Ecuaciones\GeneradorSE\obj\Debug\net7.0\GeneradorSE.csproj.CoreCompileInputs.cache
+C:\Users\memoo\Documents\Git\ProgramacionCientifica\Comparacion Sistemas de Ecuaciones\GeneradorSE\obj\Debug\net7.0\GeneradorSE.dll
+C:\Users\memoo\Documents\Git\ProgramacionCientifica\Comparacion Sistemas de Ecuaciones\GeneradorSE\obj\Debug\net7.0\refint\GeneradorSE.dll
+C:\Users\memoo\Documents\Git\ProgramacionCientifica\Comparacion Sistemas de Ecuaciones\GeneradorSE\obj\Debug\net7.0\GeneradorSE.pdb
+C:\Users\memoo\Documents\Git\ProgramacionCientifica\Comparacion Sistemas de Ecuaciones\GeneradorSE\obj\Debug\net7.0\GeneradorSE.genruntimeconfig.cache
+C:\Users\memoo\Documents\Git\ProgramacionCientifica\Comparacion Sistemas de Ecuaciones\GeneradorSE\obj\Debug\net7.0\ref\GeneradorSE.dll
