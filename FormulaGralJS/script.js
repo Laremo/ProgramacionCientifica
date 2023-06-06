@@ -126,6 +126,9 @@ class App {
     okButton.addEventListener('click', this._validateData.bind(this));
     closeButton.addEventListener('click', this._closeModal);
     overlay.addEventListener('click', this._closeModal);
+    button.addEventListener('click', () => {
+      location.replace('./index.html');
+    });
   }
 
   _showMethod(el) {

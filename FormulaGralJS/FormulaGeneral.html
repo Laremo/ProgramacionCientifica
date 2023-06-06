@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PROGRAMACION CIENTIFICA | INICIO</title>
+    <title>ECUACIONES DE SEGUNDO GRADO</title>
     <link rel="stylesheet" href="css/style.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Unbounded&display=swap"
@@ -19,50 +19,49 @@
         />
         <ul class="nav_cont">
           <li class="nav_list">
-            <a class="nav_element" data-ID="formula_general">FORMULA GENERAL</a>
+            <a class="nav_element" data-ID="#formula_general"
+              >FORMULA GENERAL</a
+            >
           </li>
           <li class="nav_list">
-            <a class="nav_element" data-ID="numeros_aleatorios"
+            <a class="nav_element" data-ID="#numeros_aleatorios"
               >MÉTODO ALEATORIO</a
             >
           </li>
           <li class="nav_list">
-            <a class="nav_element" data-ID="fuerza_bruta">FUERZA BRUTA</a>
+            <a class="nav_element" data-ID="#fuerza_bruta">FUERZA BRUTA</a>
           </li>
         </ul>
-        <button>N</button>
+        <button id="homeButton">Inicio</button>
       </nav>
     </header>
     <section>
       <!-- container -->
       <div class="container">
-        <div class="method__container" id="#formula-general">
-          <div class="method__description">
+        <div class="method__container">
+          <div class="method__description" id="#formula_general">
             <h1 class="method__name">FORMULA GENERAL</h1>
             <p>
               ParaPara calcular la solucion de las ecuaciones cuadráticas se
               utiliza el método de la fórmula general: <br />
             </p>
           </div>
-          <div class="method__description hidden">
+          <div class="method__description hidden" id="#fuerza_bruta">
             <h1 class="method__name">FUERZA BRUTA</h1>
-            <p>
-              Fureza bruta brutisima <br />
-            </p>
+            <p>Fureza bruta brutisima <br /></p>
           </div>
-          <div class="method__description hidden">
+          <div class="method__description hidden" id="#numeros_aleatorios">
             <h1 class="method__name">NÚMEROS ALEATORIOS</h1>
-            <p>
-              Numeros aleatorios<br />
-            </p>
+            <p>Numeros aleatorios<br /></p>
           </div>
-          <form>
+          <form class="div__answers">
             <h1>
               <input
                 type="text"
                 class="input__field"
                 placeholder="a"
                 title="Coeficiente del valor cuadratico"
+                required
               />
               x<sup>2</sup> +
               <input
@@ -70,6 +69,7 @@
                 class="input__field"
                 placeholder="b"
                 title="Coeficiente del valor de grado 1"
+                required
               />
               x +
               <input
@@ -77,27 +77,33 @@
                 class="input__field"
                 placeholder="c"
                 title="Valor constante"
+                required
               />
             </h1>
           </form>
-          <button class="close__button" ik="ok">Aceptar</button>
+          <div class="ButtonContainer">
+            <button class="close__button" id="ok">Aceptar</button>
+          </div>
+          <div class="results__label">
+            <h2 class="input_label" id="answers1">aaa</h2>
+            <h2 class="input_label" id="answers2">aaa</h2>
+          </div>
         </div>
       </div>
-      <div class="div__answers">
-        <h2 class="input_label" id="answers">aaaaaaaaaa</h2>
-      </div>
     </section>
-
     <div class="modal hidden">
-      <h1>Error</h1>
+      <h1><strong>Error</strong></h1>
       <p>Descripcion del error</p>
-      <button class="close__button">Cerrar</button>
+      <div class="ButtonContainer">
+        <button class="close__button" id="modalButton">Cerrar</button>
+      </div>
     </div>
     <div class="overlay hidden"></div>
-    <footer>Aqui va el footer</footer>
-    <script src="script.js"></script>
-
-    <footer>Aqui va el footer</footer>
+    <footer>
+      <h4>Aqui va el footer</h4>
+      <p>Copyright  2023 Laremo</p>
+      <p>Esto ha sido diseñado sin saber nada sobre css bla bla</p>
+    </footer>
     <script src="script.js"></script>
   </body>
 </html>

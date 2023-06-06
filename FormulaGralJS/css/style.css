@@ -1,13 +1,15 @@
 html {
   font-size: 62.3%;
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  height: 100%;
 }
 body {
   background-color: #e8e8e1;
-  font-family: "Unbounded", sans-serif;
+  font-family: 'Unbounded', sans-serif;
   margin: 0;
+  padding: 0;
+  height: 100%;
 }
 header {
   display: flex;
@@ -77,6 +79,15 @@ button:hover {
 }
 
 /* METHODS CONTAINER */
+.page__container {
+  position: relative;
+  min-height: 100%;
+}
+
+section {
+  padding-bottom: 50px;
+}
+
 .container {
   display: flex;
   align-items: center;
@@ -132,7 +143,7 @@ button:hover {
   margin-left: 2vw;
 }
 
-.results__label{
+.results__label {
   display: block;
   width: 100%;
   text-align: center;
@@ -184,15 +195,28 @@ button:hover {
   color: white;
 }
 
-.ButtonContainer{
+.ButtonContainer {
   display: flex;
   width: 100%;
   justify-content: center;
 }
 
 footer {
-  display: flexbox;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
   background-color: #0d0236;
-  height: 100%;
+  color: white;
   width: 100%;
+  height: 80px;
+}
+footer h4{
+  padding: 0;
+  margin: 8px;
+}
+footer p{
+  padding: 0;
+  margin: 0;
 }

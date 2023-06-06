@@ -19,78 +19,53 @@
         />
         <ul class="nav_cont">
           <li class="nav_list">
-            <a class="nav_element" data-ID="#formula_general"
-              >FORMULA GENERAL</a
+            <a class="nav_element" href="./FormulaGeneral.html"
+              >ECUACIONES DE SEGUNDO GRADO</a
             >
           </li>
           <li class="nav_list">
-            <a class="nav_element" data-ID="#numeros_aleatorios"
-              >MÉTODO ALEATORIO</a
-            >
+            <a class="nav_element">SISTEMAS DE ECUACIONES</a>
           </li>
           <li class="nav_list">
-            <a class="nav_element" data-ID="#fuerza_bruta">FUERZA BRUTA</a>
+            <a class="nav_element">AJUSTE DE CURVAS</a>
           </li>
         </ul>
-        <button id="homeButton">N</button>
+        <button id="homeButton">Inicio</button>
       </nav>
     </header>
+
     <section>
-      <!-- container -->
-      <div class="container">
-        <div class="method__container">
-          <div class="method__description" id="#formula_general">
-            <h1 class="method__name">FORMULA GENERAL</h1>
-            <p>
-              ParaPara calcular la solucion de las ecuaciones cuadráticas se
-              utiliza el método de la fórmula general: <br />
-            </p>
-          </div>
-          <div class="method__description hidden" id="#fuerza_bruta">
-            <h1 class="method__name">FUERZA BRUTA</h1>
-            <p>Fureza bruta brutisima <br /></p>
-          </div>
-          <div class="method__description hidden" id="#numeros_aleatorios">
-            <h1 class="method__name">NÚMEROS ALEATORIOS</h1>
-            <p>Numeros aleatorios<br /></p>
-          </div>
-          <form class="div__answers">
-            <h1>
-              <input
-                type="text"
-                class="input__field"
-                placeholder="a"
-                title="Coeficiente del valor cuadratico"
-                required
-              />
-              x<sup>2</sup> +
-              <input
-                type="text"
-                class="input__field"
-                placeholder="b"
-                title="Coeficiente del valor de grado 1"
-                required
-              />
-              x +
-              <input
-                type="text"
-                class="input__field"
-                placeholder="c"
-                title="Valor constante"
-                required
-              />
-            </h1>
-          </form>
-          <div class="ButtonContainer">
-            <button class="close__button" id="ok">Aceptar</button>
-          </div>
-          <div class="results__label">
-            <h2 class="input_label" id="answers1">aaa</h2>
-            <h2 class="input_label" id="answers2">aaa</h2>
-          </div>
-        </div>
-      </div>
+      <h1>Sobre programación científica</h1>
+      <h3>Aplicaiones</h3>
+      <ul>
+        <li>Una aplicacion</li>
+        <li>Una aplicacion</li>
+        <li>Una aplicacion</li>
+      </ul>
+      <h3>Informacion sobre los metodos</h3>
+      <ul>
+        <li>
+          Tarjetas deslizables con información general
+          <button>Un botón para 'saber más'</button>
+        </li>
+        <li>
+          Tarjetas deslizables con información general
+          <button>Un botón para 'saber más'</button>
+        </li>
+        <li>
+          Tarjetas deslizables con información general
+          <button>Un botón para 'saber más'</button>
+        </li>
+      </ul>
+      <a class="method__link" href="./FormulaGeneral.html">Formula General</a>
     </section>
+
+    <footer>
+      <h4>Aqui va el footer</h4>
+      <p>Copyright 2023 Laremo</p>
+      <p>Esto ha sido diseñado sin saber nada sobre css bla bla</p>
+    </footer>
+
     <div class="modal hidden">
       <h1><strong>Error</strong></h1>
       <p>Descripcion del error</p>
@@ -99,7 +74,6 @@
       </div>
     </div>
     <div class="overlay hidden"></div>
-    <footer>Aqui va el footer</footer>
-    <script src="script.js"></script>
+    <script src="index.js"></script>
   </body>
 </html>
